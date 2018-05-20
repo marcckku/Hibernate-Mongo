@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-mag-2018 22.29.50 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="test" name="com.web.model.Fileuser__" table="fileuser">
+    <id name="codfile" type="java.lang.Long">
+      <column name="codfile"/>
+      <generator class="identity"/>
+    </id>
+    <property name="titolo" type="string">
+      <column length="200" name="titolo"/>
+    </property>
+    <property name="descrizione" type="string">
+      <column length="200" name="descrizione"/>
+    </property>
+    <property name="data" type="timestamp">
+      <column length="19" name="data" not-null="true"/>
+    </property>
+    <property name="file" type="binary">
+      <column name="file"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="iduserIdfiles" table="iduser_idfile">
+      <key>
+        <column name="fileCod" not-null="true"/>
+      </key>
+      <one-to-many class="com.web.model.IduserIdfile"/>
+    </set>
+  </class>
+</hibernate-mapping>

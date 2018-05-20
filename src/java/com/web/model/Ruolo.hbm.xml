@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-mag-2018 22.29.50 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.web.model.Ruolo" table="ruolo_" catalog="test">
+        <id name="id" type="java.lang.Long">
+            <column name="id_" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="ruolo" type="string">
+            <column name="ruolo_" />
+        </property>
+        <set name="users" table="user" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_" />
+            </key>
+            <one-to-many class="com.web.model.User" />
+        </set>
+    </class>
+</hibernate-mapping>

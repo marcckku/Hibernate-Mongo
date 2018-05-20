@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-mag-2018 22.29.50 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="test" name="com.web.model.IduserIdfile" table="iduser_idfile">
+    <composite-id class="com.web.model.IduserIdfileId" name="id">
+      <key-property name="userId" type="long">
+        <column name="userId"/>
+      </key-property>
+      <key-property name="fileCod" type="long">
+        <column name="fileCod"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="com.web.model.Fileuser__" fetch="select" insert="false" name="fileuser" update="false">
+      <column name="fileCod" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.web.model.User" fetch="select" insert="false" name="user" update="false">
+      <column name="userId" not-null="true"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

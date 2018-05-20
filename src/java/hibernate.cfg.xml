@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+-->
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/test?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">amministrattoreMP</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+    <!--<mapping resource="com/web/model/Ruolo.hbm.xml"/>
+    <mapping resource="com/web/model/IduserIdfile.hbm.xml"/>
+    <mapping resource="com/web/model/Fileuser.hbm.xml"/>
+    <mapping resource="com/web/model/Persona.hbm.xml"/>
+    <mapping resource="com/web/model/Foto.hbm.xml"/>
+    <mapping resource="com/web/model/User.hbm.xml"/>
+    -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <mapping resource="com/web/modelFileUser/Fileuser.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

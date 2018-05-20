@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-mag-2018 22.29.50 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.web.modelFileUser.Fileuser" table="fileuser" catalog="test" optimistic-lock="version">
+        <id name="codfile" type="java.lang.Long">
+            <column name="codfile" />
+            <generator class="identity" />
+        </id>
+        <property name="titolo" type="string">
+            <column name="titolo" length="200" />
+        </property>
+        <property name="descrizione" type="string">
+            <column name="descrizione" length="200" />
+        </property>
+        <property name="data" type="timestamp">
+            <column name="data" length="19" not-null="true" />
+        </property>
+        <property name="file" type="binary">
+            <column name="file" />
+        </property>
+    </class>
+</hibernate-mapping>

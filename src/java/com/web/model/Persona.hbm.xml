@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-mag-2018 22.29.50 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.web.model.Persona" table="persona" catalog="test">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="codfiscale" type="string">
+            <column name="CODFISCALE" />
+        </property>
+        <property name="cog" type="string">
+            <column name="COG" />
+        </property>
+        <property name="eta" type="java.lang.Integer">
+            <column name="ETA" />
+        </property>
+        <property name="nome" type="string">
+            <column name="NOME" />
+        </property>
+    </class>
+</hibernate-mapping>

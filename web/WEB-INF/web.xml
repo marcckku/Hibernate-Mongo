@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" 
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">    
+    
+    
+    <servlet>
+        <servlet-name>ControllerUploadFile</servlet-name>
+        <servlet-class>com.web.controller.ControllerUploadFile</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ControllerUploadFile</servlet-name>
+        <url-pattern>/mappingAction</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+
+    <welcome-file-list>
+        <welcome-file>uploadFile.jsp</welcome-file>
+    </welcome-file-list>
+    <!--
+    <multipart-config>
+        <location>/tmp</location>
+        <max-file-size>20848820</max-file-size>
+        <max-request-size>418018841</max-request-size>
+        <file-size-threshold>1048576</file-size-threshold>
+    </multipart-config>
+    -->
+    
+    
+      <!--  servlet collegamento fatto il 10/05/2018 se e solo se extendo la claSse HTTPSERVLET PERCHè con Spring non esiste più la extends di Httpservlet-->
+    <context-param>
+        <description>Location to store uploaded file</description>
+        <param-name>file-upload</param-name>
+        <param-value>
+            C:\Users\Utente\Music\tmp\
+        </param-value>
+    </context-param>
+    
+    
+</web-app>
